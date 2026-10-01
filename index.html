@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>2026학년도 관학회(진로동아리) '팝콘' 진로발표행사</title>
+<meta name="description" content="2026학년도 관학회(진로동아리) '팝콘' 진로발표행사 — 2026.10.24.(토) 15:00, 1층 신음악실" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --orange:#f2711c;
+    --orange-light:#ff9f45;
+    --burgundy:#7b1e2b;
+    --burgundy-dark:#4e1119;
+    --gold:#d8a526;
+    --gold-light:#f3d27a;
+    --cream:#fff8f0;
+    --ink:#2b1d18;
+    --ink-soft:#6b5a52;
+    --line:rgba(123,30,43,.14);
+    --card:#ffffff;
+    --shadow-sm:0 2px 8px rgba(78,17,25,.07);
+    --shadow:0 10px 30px rgba(78,17,25,.10);
+    --shadow-lg:0 20px 50px rgba(78,17,25,.16);
+    --radius:18px;
+    --maxw:1140px;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:78px;}
+  body{
+    margin:0;
+    font-family:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",Pretendard,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    word-break:keep-all;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position:sticky;top:0;z-index:100;
+    background:rgba(255,248,240,.88);
+    backdrop-filter:saturate(160%) blur(12px);
+    -webkit-backdrop-filter:saturate(160%) blur(12px);
+    border-bottom:1px solid var(--line);
+    transition:box-shadow .25s ease, background .25s ease;
+  }
+  .nav.scrolled{box-shadow:var(--shadow-sm);background:rgba(255,248,240,.96);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-.02em;text-decoration:none;font-size:18px;}
+  .brand .logo{
+    width:36px;height:36px;border-radius:12px;display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--orange),var(--burgundy));
+    color:#fff;font-size:18px;box-shadow:var(--shadow-sm);
+  }
+  .brand small{display:block;font-size:11px;font-weight:500;color:var(--ink-soft);letter-spacing:0;line-height:1.2;}
+  .nav-links{display:flex;align-items:center;gap:4px;list-style:none;margin:0;padding:0;}
+  .nav-links a{
+    display:block;padding:9px 14px;border-radius:999px;text-decoration:none;
+    font-size:15px;font-weight:500;color:var(--ink-soft);transition:.2s;
+  }
+  .nav-links a:hover{color:var(--burgundy);background:rgba(242,113,28,.10);}
+  .nav-links a.active{color:#fff;background:linear-gradient(135deg,var(--orange),var(--burgundy));box-shadow:var(--shadow-sm);}
+  .nav-toggle{
+    display:none;border:1px solid var(--line);background:#fff;border-radius:12px;
+    width:42px;height:42px;cursor:pointer;padding:0;align-items:center;justify-content:center;
+  }
+  .nav-toggle span{display:block;width:18px;height:2px;background:var(--burgundy);position:relative;border-radius:2px;transition:.25s;}
+  .nav-toggle span::before,.nav-toggle span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--burgundy);border-radius:2px;transition:.25s;}
+  .nav-toggle span::before{top:-6px;}
+  .nav-toggle span::after{top:6px;}
+  .nav-toggle.open span{background:transparent;}
+  .nav-toggle.open span::before{top:0;transform:rotate(45deg);}
+  .nav-toggle.open span::after{top:0;transform:rotate(-45deg);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;overflow:hidden;color:#fff;
+    background:
+      radial-gradient(1000px 520px at 85% -10%, rgba(243,210,122,.55), transparent 60%),
+      radial-gradient(800px 500px at 10% 110%, rgba(242,113,28,.55), transparent 60%),
+      linear-gradient(135deg,#7b1e2b 0%, #a4302c 45%, #e2691b 100%);
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:radial-gradient(rgba(255,255,255,.14) 1px, transparent 1px);
+    background-size:26px 26px;opacity:.5;
+  }
+  .hero-inner{position:relative;z-index:2;padding:76px 20px 84px;text-align:center;}
+  .hero .kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);
+    padding:7px 16px;border-radius:999px;font-size:13.5px;font-weight:500;letter-spacing:.02em;
+    backdrop-filter:blur(6px);
+  }
+  .hero h1{
+    margin:20px auto 10px;font-size:clamp(28px,5.6vw,52px);line-height:1.22;font-weight:900;letter-spacing:-.03em;
+    max-width:14em;text-shadow:0 6px 24px rgba(0,0,0,.22);
+  }
+  .hero h1 .pop{
+    background:linear-gradient(180deg,#fff 40%,var(--gold-light));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero .sub{margin:0 auto;max-width:44em;font-size:clamp(14.5px,2.2vw,17px);color:rgba(255,255,255,.92);}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:26px 0 30px;}
+  .chip{
+    display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:500;
+    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.26);
+    padding:9px 16px;border-radius:999px;backdrop-filter:blur(6px);
+  }
+  .countdown{
+    display:inline-flex;flex-direction:column;align-items:center;gap:2px;
+    background:rgba(255,255,255,.97);color:var(--burgundy);
+    border-radius:24px;padding:20px 40px;box-shadow:var(--shadow-lg);min-width:220px;
+  }
+  .countdown .label{font-size:12.5px;font-weight:700;letter-spacing:.14em;color:var(--orange);text-transform:uppercase;}
+  .countdown .dday{font-size:clamp(38px,8vw,60px);font-weight:900;line-height:1.1;letter-spacing:-.04em;}
+  .countdown .note{font-size:13px;color:var(--ink-soft);font-weight:500;}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;text-decoration:none;cursor:pointer;
+    font-weight:700;font-size:15px;padding:13px 24px;border-radius:999px;border:0;transition:.22s;
+  }
+  .btn-primary{background:#fff;color:var(--burgundy);box-shadow:var(--shadow);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+  .btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.4);}
+  .btn-ghost:hover{background:rgba(255,255,255,.22);transform:translateY(-2px);}
+  .btn-solid{background:linear-gradient(135deg,var(--orange),var(--burgundy));color:#fff;box-shadow:var(--shadow);}
+  .btn-solid:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+  .btn-outline{background:#fff;color:var(--burgundy);border:1.5px solid var(--line);box-shadow:var(--shadow-sm);}
+  .btn-outline:hover{border-color:var(--orange);color:var(--orange);transform:translateY(-2px);}
+  .wave{display:block;width:100%;height:auto;position:relative;z-index:2;margin-bottom:-6px;}
+
+  /* ---------- SECTION ---------- */
+  section{padding:76px 0;}
+  .sec-head{text-align:center;max-width:46em;margin:0 auto 44px;}
+  .sec-tag{
+    display:inline-block;font-size:12.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--orange);background:rgba(242,113,28,.12);padding:6px 14px;border-radius:999px;
+  }
+  .sec-head h2{font-size:clamp(24px,4vw,36px);margin:14px 0 10px;font-weight:900;letter-spacing:-.03em;color:var(--burgundy-dark);}
+  .sec-head p{margin:0;color:var(--ink-soft);font-size:16px;}
+  .alt{background:linear-gradient(180deg,#fff 0%,#fff6ea 100%);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+
+  /* ---------- 소개 ---------- */
+  .goal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:20px;}
+  .goal-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 24px;box-shadow:var(--shadow-sm);transition:.26s;position:relative;overflow:hidden;
+  }
+  .goal-card::before{content:"";position:absolute;left:0;top:0;height:4px;width:100%;background:linear-gradient(90deg,var(--orange),var(--gold));opacity:.85;}
+  .goal-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:rgba(242,113,28,.35);}
+  .goal-card .ico{font-size:30px;line-height:1;margin-bottom:12px;}
+  .goal-card h3{margin:0 0 8px;font-size:17.5px;font-weight:800;color:var(--burgundy);letter-spacing:-.02em;}
+  .goal-card p{margin:0;font-size:14.8px;color:var(--ink-soft);}
+
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:40px;}
+  .step{
+    background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 16px;text-align:center;
+    box-shadow:var(--shadow-sm);position:relative;transition:.24s;
+  }
+  .step:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+  .step .num{
+    width:34px;height:34px;margin:0 auto 10px;border-radius:50%;display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--orange),var(--burgundy));color:#fff;font-weight:900;font-size:14px;
+  }
+  .step strong{display:block;font-size:15.5px;color:var(--burgundy-dark);}
+  .step span{font-size:13px;color:var(--ink-soft);}
+
+  .info-strip{
+    margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;
+    background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);
+  }
+  .info-strip div{background:#fff;padding:22px 20px;}
+  .info-strip dt{font-size:12.5px;font-weight:800;letter-spacing:.1em;color:var(--orange);text-transform:uppercase;margin-bottom:6px;}
+  .info-strip dd{margin:0;font-size:16px;font-weight:700;color:var(--burgundy-dark);letter-spacing:-.01em;}
+  .info-strip dd small{display:block;font-weight:400;font-size:13.5px;color:var(--ink-soft);margin-top:2px;}
+
+  /* ---------- 타임라인 ---------- */
+  .tl-legend{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:34px;font-size:13.5px;color:var(--ink-soft);}
+  .tl-legend span{display:inline-flex;align-items:center;gap:7px;}
+  .dot{width:11px;height:11px;border-radius:50%;display:inline-block;}
+  .dot.done{background:#8aa37b;}
+  .dot.today{background:var(--orange);box-shadow:0 0 0 4px rgba(242,113,28,.25);}
+  .dot.soon{background:var(--gold);}
+  .dot.up{background:#c9bcb2;}
+
+  .timeline{position:relative;max-width:900px;margin:0 auto;padding-left:0;}
+  .timeline::before{
+    content:"";position:absolute;left:50%;top:6px;bottom:6px;width:3px;transform:translateX(-50%);
+    background:linear-gradient(180deg,#8aa37b,var(--orange),var(--gold),#d9cec5);border-radius:3px;opacity:.5;
+  }
+  .tl-item{position:relative;width:50%;padding:0 40px 30px 0;}
+  .tl-item:nth-child(even){margin-left:50%;padding:0 0 30px 40px;}
+  .tl-item .marker{
+    position:absolute;top:22px;right:-9px;width:18px;height:18px;border-radius:50%;
+    background:#fff;border:4px solid #c9bcb2;z-index:2;
+  }
+  .tl-item:nth-child(even) .marker{right:auto;left:-9px;}
+  .tl-item.is-done .marker{border-color:#8aa37b;}
+  .tl-item.is-soon .marker{border-color:var(--gold);}
+  .tl-item.is-today .marker{border-color:var(--orange);box-shadow:0 0 0 6px rgba(242,113,28,.22);animation:pulse 1.9s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(242,113,28,.42);}70%{box-shadow:0 0 0 12px rgba(242,113,28,0);}100%{box-shadow:0 0 0 0 rgba(242,113,28,0);}}
+  .tl-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;
+    box-shadow:var(--shadow-sm);transition:.24s;
+  }
+  .tl-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+  .tl-item.is-done .tl-card{background:#fbfaf8;opacity:.92;}
+  .tl-item.is-today .tl-card{border-color:rgba(242,113,28,.5);box-shadow:0 12px 34px rgba(242,113,28,.18);}
+  .tl-item.is-final .tl-card{background:linear-gradient(135deg,#fff,#fff2e2);border-color:rgba(216,165,38,.55);}
+  .tl-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px;}
+  .tl-date{font-size:17px;font-weight:900;color:var(--burgundy);letter-spacing:-.02em;}
+  .tl-kind{font-size:12.5px;font-weight:700;color:var(--orange);background:rgba(242,113,28,.1);padding:3px 10px;border-radius:999px;}
+  .tl-card p{margin:0;font-size:14.8px;color:var(--ink-soft);}
+  .tl-zoom{margin-top:12px;padding:8px 16px;font-size:13.5px;display:inline-flex;}
+  .zoom-chip{display:inline-flex;align-items:center;gap:6px;margin-top:8px;padding:6px 14px;font-size:13px;font-weight:700;color:#fff;background:linear-gradient(135deg,#2D8CFF,#0E5FC1);border-radius:999px;text-decoration:none;box-shadow:var(--shadow-sm);transition:transform .2s,box-shadow .2s;}
+  .zoom-chip:hover{transform:translateY(-2px);box-shadow:var(--shadow);}
+  .badge{font-size:12px;font-weight:800;padding:3.5px 11px;border-radius:999px;letter-spacing:.01em;white-space:nowrap;}
+  .badge.done{background:#eaf0e5;color:#55703f;}
+  .badge.today{background:linear-gradient(135deg,var(--orange),var(--burgundy));color:#fff;}
+  .badge.soon{background:#fdf3d8;color:#8a6a10;}
+  .badge.up{background:#f1ece8;color:#7d6c62;}
+
+  /* ---------- 팀 ---------- */
+  .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:22px;}
+  .team-card{
+    background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;
+    box-shadow:var(--shadow-sm);display:flex;flex-direction:column;transition:.26s;
+  }
+  .team-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-lg);}
+  .team-head{
+    padding:18px 22px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:10px;
+    background:linear-gradient(135deg,var(--burgundy),var(--orange));
+  }
+  .team-card:nth-child(2) .team-head{background:linear-gradient(135deg,#8a3a12,#e2951f);}
+  .team-card:nth-child(3) .team-head{background:linear-gradient(135deg,#6d2140,#d4682e);}
+  .team-card:nth-child(4) .team-head{background:linear-gradient(135deg,#7a4412,#e0a62a);}
+  .team-card:nth-child(5) .team-head{background:linear-gradient(135deg,#5e2330,#c2562b);}
+  .team-card:nth-child(6) .team-head{background:linear-gradient(135deg,#6b321c,#d98a21);}
+  .team-head .no{font-size:20px;font-weight:900;letter-spacing:-.02em;display:flex;align-items:center;gap:9px;}
+  .team-head .no em{
+    font-style:normal;width:32px;height:32px;border-radius:11px;display:grid;place-items:center;
+    background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.32);font-size:15px;
+  }
+  .mbadge{font-size:11.5px;font-weight:800;padding:4px 11px;border-radius:999px;background:rgba(255,255,255,.95);color:var(--burgundy);}
+  .mbadge.no-m{background:rgba(255,255,255,.22);color:#fff;border:1px solid rgba(255,255,255,.45);}
+  .team-body{padding:20px 22px 22px;flex:1;display:flex;flex-direction:column;gap:16px;}
+  .topic{background:var(--cream);border:1px dashed rgba(242,113,28,.4);border-radius:14px;padding:13px 15px;}
+  .topic .lb{font-size:11.5px;font-weight:800;letter-spacing:.12em;color:var(--orange);text-transform:uppercase;}
+  .topic .tx{font-size:16px;font-weight:800;color:var(--burgundy-dark);letter-spacing:-.02em;line-height:1.45;margin-top:3px;}
+  .topic .tx.undecided{color:#9d8b81;font-weight:600;font-style:italic;}
+  .roles{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
+  .role{background:#fbf7f3;border:1px solid var(--line);border-radius:12px;padding:9px 12px;}
+  .role b{display:block;font-size:11.5px;font-weight:800;color:var(--orange);letter-spacing:.06em;margin-bottom:1px;}
+  .role span{font-size:15px;font-weight:700;color:var(--burgundy-dark);}
+  .fields{display:flex;flex-wrap:wrap;gap:6px;}
+  .tag{font-size:12.5px;font-weight:600;color:var(--burgundy);background:rgba(216,165,38,.16);border:1px solid rgba(216,165,38,.3);padding:4px 11px;border-radius:999px;}
+  .fields-lb{font-size:11.5px;font-weight:800;letter-spacing:.12em;color:var(--ink-soft);text-transform:uppercase;margin-bottom:7px;}
+
+  .team-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:34px;}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center;box-shadow:var(--shadow-sm);}
+  .stat b{display:block;font-size:30px;font-weight:900;line-height:1.1;color:var(--orange);letter-spacing:-.03em;}
+  .stat span{font-size:13.5px;color:var(--ink-soft);font-weight:600;}
+
+  /* ---------- 발표자료 ---------- */
+  .drive-box{
+    background:#fff;border:1px solid var(--line);border-radius:22px;padding:14px;
+    box-shadow:var(--shadow);max-width:1000px;margin:0 auto;
+  }
+  .drive-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:8px 10px 14px;}
+  .drive-bar .t{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--burgundy-dark);font-size:15.5px;}
+  .drive-frame{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#faf7f4;min-height:420px;}
+  .drive-frame iframe{display:block;width:100%;height:560px;border:0;}
+  .drive-fallback{
+    position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;gap:12px;padding:30px;background:#fffaf4;
+  }
+  .drive-fallback.show{display:flex;}
+  .drive-fallback .ico{font-size:44px;}
+  .drive-fallback p{margin:0;color:var(--ink-soft);font-size:14.8px;max-width:30em;}
+  .drive-note{margin:16px auto 0;text-align:center;font-size:13.5px;color:var(--ink-soft);max-width:44em;}
+
+  /* ---------- 안내 ---------- */
+  .prep-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;}
+  .prep{
+    display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);
+    border-left:5px solid var(--orange);border-radius:16px;padding:20px 20px;box-shadow:var(--shadow-sm);transition:.24s;
+  }
+  .prep:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+  .prep .ico{font-size:25px;line-height:1.2;}
+  .prep h4{margin:0 0 4px;font-size:16px;font-weight:800;color:var(--burgundy-dark);letter-spacing:-.02em;}
+  .prep p{margin:0;font-size:14.3px;color:var(--ink-soft);}
+  .prep .st{display:inline-block;margin-top:8px;font-size:11.5px;font-weight:800;padding:3px 10px;border-radius:999px;}
+  .st.ok{background:#eaf0e5;color:#55703f;}
+  .st.need{background:#fdeadf;color:#b2531a;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:linear-gradient(135deg,var(--burgundy-dark),var(--burgundy) 60%,#92321f);
+    color:rgba(255,255,255,.85);padding:52px 0 30px;margin-top:0;
+  }
+  .f-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px;align-items:start;}
+  .f-brand{display:flex;align-items:center;gap:11px;color:#fff;font-weight:900;font-size:19px;letter-spacing:-.02em;}
+  .f-brand .logo{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);font-size:19px;}
+  footer p{margin:10px 0 0;font-size:14px;}
+  footer h5{margin:0 0 10px;color:var(--gold-light);font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;}
+  footer ul{list-style:none;margin:0;padding:0;font-size:14.3px;}
+  footer li{margin-bottom:7px;}
+  footer a{color:rgba(255,255,255,.9);text-decoration:none;border-bottom:1px dotted rgba(255,255,255,.4);}
+  footer a:hover{color:var(--gold-light);}
+  .f-bottom{border-top:1px solid rgba(255,255,255,.18);margin-top:34px;padding-top:18px;font-size:13px;text-align:center;color:rgba(255,255,255,.65);}
+
+  .top-btn{
+    position:fixed;right:20px;bottom:20px;width:48px;height:48px;border-radius:50%;border:0;cursor:pointer;z-index:90;
+    background:linear-gradient(135deg,var(--orange),var(--burgundy));color:#fff;font-size:19px;box-shadow:var(--shadow);
+    opacity:0;visibility:hidden;transform:translateY(12px);transition:.28s;
+  }
+  .top-btn.show{opacity:1;visibility:visible;transform:translateY(0);}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:900px){
+    .nav-toggle{display:flex;}
+    .nav-links{
+      position:absolute;left:0;right:0;top:66px;flex-direction:column;align-items:stretch;gap:2px;
+      background:rgba(255,248,240,.99);border-bottom:1px solid var(--line);padding:10px 16px 16px;
+      box-shadow:var(--shadow);display:none;
+    }
+    .nav-links.open{display:flex;}
+    .nav-links a{padding:13px 14px;border-radius:12px;font-size:16px;}
+    .timeline::before{left:9px;transform:none;}
+    .tl-item,.tl-item:nth-child(even){width:100%;margin-left:0;padding:0 0 24px 34px;}
+    .tl-item .marker,.tl-item:nth-child(even) .marker{left:1px;right:auto;top:20px;}
+  }
+  @media (max-width:600px){
+    section{padding:56px 0;}
+    .hero-inner{padding:54px 18px 64px;}
+    .countdown{padding:17px 30px;min-width:190px;}
+    .btn{width:100%;justify-content:center;}
+    .hero-cta{flex-direction:column;}
+    .roles{grid-template-columns:1fr 1fr;}
+    .drive-frame iframe{height:440px;}
+    .drive-bar .btn{width:100%;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;}
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1;transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">
+      <span class="logo">🍿</span>
+      <span>팝콘 진로발표행사<small>2026학년도 관학회(진로동아리)</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false"><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">소개</a></li>
+      <li><a href="#schedule">일정</a></li>
+      <li><a href="#teams">팀 소개</a></li>
+      <li><a href="#files">발표자료</a></li>
+      <li><a href="#notice">안내사항</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="wrap hero-inner">
+    <span class="kicker">🍂 2026 가을집회 · 졸업생과 함께하는 진로 멘토링</span>
+    <h1>2026학년도 관학회(진로동아리)<br><span class="pop">'팝콘'</span> 진로발표행사</h1>
+    <p class="sub">조별 진로 주제 발표와 졸업생 멘토링으로 진로 탐색 역량을 키우고, 가을집회 팝콘 경연에서 그 결과를 함께 나눕니다.</p>
+
+    <div class="hero-meta">
+      <span class="chip">📅 2026. 10. 24.(토) 15:00</span>
+      <span class="chip">📍 1층 신음악실</span>
+      <span class="chip">👥 6개 팀 참여</span>
+      <span class="chip">🗓 운영기간 2026.8.21.(금) ~ 10.24.(토)</span>
+    </div>
+
+    <div class="countdown" id="countdown">
+      <span class="label" id="cdLabel">경연까지</span>
+      <span class="dday" id="cdValue">D-00</span>
+      <span class="note" id="cdNote">2026년 10월 24일 토요일 오후 3시</span>
+    </div>
+
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#schedule">📌 전체 일정 보기</a>
+      <a class="btn btn-ghost" href="#files">📑 발표자료 바로가기</a>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="#fff8f0" d="M0,52 C240,96 480,8 720,30 C960,52 1200,96 1440,62 L1440,90 L0,90 Z"></path>
+  </svg>
+</header>
+
+<!-- ============ 소개 ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">About</span>
+      <h2>추진 목적 및 방법</h2>
+      <p>진로 주제 발표 → 졸업생 멘토링 → 경연 공유로 이어지는 진로 탐색 프로젝트입니다.</p>
+    </div>
+
+    <div class="goal-grid">
+      <article class="goal-card reveal">
+        <div class="ico">🎯</div>
+        <h3>진로 탐색 역량 신장</h3>
+        <p>조별 진로 주제 발표를 통해 진로 탐색 역량과 협업·발표 역량을 신장합니다.</p>
+      </article>
+      <article class="goal-card reveal">
+        <div class="ico">🤝</div>
+        <h3>졸업생 멘토링</h3>
+        <p>졸업생 멘토의 피드백으로 발표 내용의 완성도를 한층 높입니다.</p>
+      </article>
+      <article class="goal-card reveal">
+        <div class="ico">🍿</div>
+        <h3>팝콘 경연 공유</h3>
+        <p>가을집회 팝콘 경연에서 발표를 공유하고, 졸업생들과 진로 탐색 경험을 확산합니다.</p>
+      </article>
+      <article class="goal-card reveal">
+        <div class="ico">🍂</div>
+        <h3>가을집회의 의미</h3>
+        <p>가을집회는 졸업생과 재학생이 모여 학업을 나누고 진로에 대해 멘토링 하는 자리입니다.</p>
+      </article>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal"><div class="num">1</div><strong>주제 선정</strong><span>팀별 진로 주제 결정</span></div>
+      <div class="step reveal"><div class="num">2</div><strong>발표자료 제작</strong><span>PPT 초안 → 구체화</span></div>
+      <div class="step reveal"><div class="num">3</div><strong>별빛 컨설팅</strong><span>졸업생 멘토링</span></div>
+      <div class="step reveal"><div class="num">4</div><strong>리허설</strong><span>발표 최종 점검</span></div>
+      <div class="step reveal"><div class="num">5</div><strong>경연 발표</strong><span>가을집회 팝콘 경연</span></div>
+    </div>
+
+    <dl class="info-strip reveal">
+      <div><dt>대상</dt><dd>진로동아리(관학회) 소속 학생<small>6개 팀, 팀별 소인원 편성</small></dd></div>
+      <div><dt>운영기간</dt><dd>2026.8.21.(금) ~ 10.24.(토)<small>정규 동아리 활동(매주 금요일) 시간 활용</small></dd></div>
+      <div><dt>경연일시</dt><dd>2026.10.24.(토) 15:00<small>가을집회 중 진행 · 1층 신음악실</small></dd></div>
+      <div><dt>비대면 멘토링</dt><dd>2026.10.8.(목)<small>졸업생 멘토의 팀별 발표 초안 피드백</small>
+        <a class="zoom-chip" href="https://us06web.zoom.us/meetings/83301151732/invitations?signature=-SQXn6WcwEcNWqWZOLBLf6QKMF3PEVnrT8-IIscKMCc" target="_blank" rel="noopener">🎥 Zoom 회의 참여</a>
+      </dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ 일정 ============ -->
+<section id="schedule" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Schedule</span>
+      <h2>세부 추진 일정</h2>
+      <p>오늘 날짜를 기준으로 완료된 일정과 다가오는 일정을 자동으로 구분해 표시합니다.</p>
+    </div>
+
+    <div class="tl-legend reveal">
+      <span><i class="dot done"></i> 완료</span>
+      <span><i class="dot today"></i> 오늘</span>
+      <span><i class="dot soon"></i> 임박 (7일 이내)</span>
+      <span><i class="dot up"></i> 예정</span>
+    </div>
+
+    <div class="timeline" id="timeline">
+      <div class="tl-item reveal" data-date="2026-08-28">
+        <span class="marker"></span>
+        <div class="tl-card">
+          <div class="tl-top">
+            <span class="tl-date">8/28(금)</span>
+            <span class="tl-kind">팝콘 발표 준비①</span>
+            <span class="badge up js-badge">예정</span>
+          </div>
+          <p>팀별 진로 주제 선정 및 발표 개요 구성</p>
+        </div>
+      </div>
+
+      <div class="tl-item reveal" data-date="2026-09-04">
+        <span class="marker"></span>
+        <div class="tl-card">
+          <div class="tl-top">
+            <span class="tl-date">9/04(금)</span>
+            <span class="tl-kind">팝콘 발표 준비②</span>
+            <span class="badge up js-badge">예정</span>
+          </div>
+          <p>발표자료(PPT) 초안 제작</p>
+        </div>
+      </div>
+
+      <div class="tl-item reveal" data-date="2026-09-18">
+        <span class="marker"></span>
+        <div class="tl-card">
+          <div class="tl-top">
+            <span class="tl-date">9/18(금)</span>
+            <span class="tl-kind">팝콘 발표 준비②</span>
+            <span class="badge up js-badge">예정</span>
+          </div>
+          <p>발표자료(PPT) 구체화</p>
+        </div>
+      </div>
+
+      <div class="tl-item reveal" data-date="2026-10-08">
+        <span class="marker"></span>
+        <div class="tl-card">
+          <div class="tl-top">
+            <span class="tl-date">10/8(목)</span>
+            <span class="tl-kind">멘토 컨설팅</span>
+            <span class="badge up js-badge">예정</span>
+          </div>
+          <p>졸업생 멘토 피드백(발표 내용·방향 점검) · 비대면 진행</p>
+          <a class="btn btn-solid tl-zoom" href="https://us06web.zoom.us/meetings/83301151732/invitations?signature=-SQXn6WcwEcNWqWZOLBLf6QKMF3PEVnrT8-IIscKMCc" target="_blank" rel="noopener">🎥 Zoom 회의 참여하기</a>
+        </div>
+      </div>
+
+      <div class="tl-item reveal" data-date="2026-10-23">
+        <span class="marker"></span>
+        <div class="tl-card">
+          <div class="tl-top">
+            <span class="tl-date">10/23(금)</span>
+            <span class="tl-kind">팝콘 발표 준비</span>
+            <span class="badge up js-badge">예정</span>
+          </div>
+          <p>발표 리허설 및 최종 점검</p>
+        </div>
+      </div>
+
+      <div class="tl-item is-final reveal" data-date="2026-10-24">
+        <span class="marker"></span>
+        <div class="tl-card">
+          <div class="tl-top">
+            <span class="tl-date">10/24(토)</span>
+            <span class="tl-kind">팝콘 경연 · 가을집회</span>
+            <span class="badge up js-badge">예정</span>
+          </div>
+          <p>팀별 팝콘 경연 발표 (15:00 시작) · 1층 신음악실</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 팀 소개 ============ -->
+<section id="teams">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Teams</span>
+      <h2>팀 구성 현황</h2>
+      <p>2026. 10. 01. 기준 · 총 6개 팀</p>
+    </div>
+
+    <div class="team-stats reveal">
+      <div class="stat"><b>6</b><span>참여 팀</span></div>
+      <div class="stat"><b id="stTopic">4</b><span>주제 확정 팀</span></div>
+      <div class="stat"><b id="stMentor">4</b><span>멘토링 참여 확정</span></div>
+      <div class="stat"><b>4</b><span>팀별 역할 (팀장·서기·발표·PPT)</span></div>
+    </div>
+
+    <div class="team-grid" id="teamGrid"><!-- JS 렌더링 --></div>
+  </div>
+</section>
+
+<!-- ============ 발표자료 ============ -->
+<section id="files" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Materials</span>
+      <h2>발표자료(PPT) 모음</h2>
+      <p>팀별 팝콘 발표 초안이 담긴 구글 드라이브 폴더입니다. 아래에서 바로 확인하거나 새 탭에서 열 수 있습니다.</p>
+    </div>
+
+    <div class="drive-box reveal">
+      <div class="drive-bar">
+        <span class="t">📁 팝콘 발표 초안 (Google Drive 폴더)</span>
+        <a class="btn btn-solid" id="driveOpen"
+           href="https://drive.google.com/drive/folders/1ovJz0AXVEjyX4ehlvdRbqwzVRHwg-xsn?usp=sharing"
+           target="_blank" rel="noopener noreferrer">🔗 새 탭에서 열기</a>
+      </div>
+      <div class="drive-frame">
+        <iframe id="driveFrame"
+          src="https://drive.google.com/embeddedfolderview?id=1ovJz0AXVEjyX4ehlvdRbqwzVRHwg-xsn#grid"
+          title="팝콘 발표 초안 구글 드라이브 폴더" loading="lazy"></iframe>
+        <div class="drive-fallback" id="driveFallback">
+          <div class="ico">📂</div>
+          <h3 style="margin:0;color:var(--burgundy-dark);">폴더 미리보기를 불러오지 못했습니다</h3>
+          <p>브라우저 설정, 네트워크 차단 또는 드라이브 공유 권한으로 인해 미리보기가 표시되지 않을 수 있습니다. 아래 버튼으로 원본 폴더를 새 탭에서 열어주세요.</p>
+          <a class="btn btn-solid"
+             href="https://drive.google.com/drive/folders/1ovJz0AXVEjyX4ehlvdRbqwzVRHwg-xsn?usp=sharing"
+             target="_blank" rel="noopener noreferrer">🔗 구글 드라이브에서 열기</a>
+        </div>
+      </div>
+      <p class="drive-note">※ 미리보기는 폴더가 '링크가 있는 모든 사용자에게 공개'로 설정되어 있을 때 표시됩니다. 보이지 않는 경우 새 탭에서 열기를 이용해 주세요.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 안내사항 ============ -->
+<section id="notice">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Notice</span>
+      <h2>협조 및 준비사항</h2>
+      <p>원활한 행사 운영을 위해 아래 사항에 대한 협조를 부탁드립니다.</p>
+    </div>
+
+    <div class="prep-grid">
+      <div class="prep reveal">
+        <span class="ico">🏫</span>
+        <div>
+          <h4>가을집회 일정 및 장소 협조</h4>
+          <p>2026.10.24.(토) 가을집회 일정 및 장소(1층 신음악실) 사용 협조를 요청드립니다.</p>
+          <span class="st need">협조 요청</span>
+        </div>
+      </div>
+      <div class="prep reveal">
+        <span class="ico">🎓</span>
+        <div>
+          <h4>졸업생 멘토링 초빙·연락</h4>
+          <p>졸업생 멘토 초빙 및 연락 협조가 완료되었습니다. (비대면 멘토링 10.8.(목))</p>
+          <span class="st ok">완료</span>
+        </div>
+      </div>
+      <div class="prep reveal">
+        <span class="ico">💻</span>
+        <div>
+          <h4>기자재 준비</h4>
+          <p>팀별 발표자료 제작·발표를 위한 노트북, 빔프로젝터, 마이크 등 기자재 준비가 필요합니다.</p>
+          <span class="st need">준비 필요</span>
+        </div>
+      </div>
+      <div class="prep reveal">
+        <span class="ico">🍪</span>
+        <div>
+          <h4>다과 및 음료</h4>
+          <p>쉬는시간 참가 학생과 졸업생을 위한 다과 및 음료 준비가 필요합니다.</p>
+          <span class="st need">준비 필요</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <div class="f-brand"><span class="logo">🍿</span> 팝콘 진로발표행사</div>
+        <p>2026학년도 관학회(진로동아리) '팝콘' 진로발표행사<br>조별 진로 주제 발표와 졸업생 멘토링으로 함께 성장합니다.</p>
+      </div>
+      <div>
+        <h5>행사 개요</h5>
+        <ul>
+          <li>경연일시 · 2026.10.24.(토) 15:00</li>
+          <li>장소 · 1층 신음악실 (가을집회 중 진행)</li>
+          <li>운영기간 · 2026.8.21.(금) ~ 10.24.(토)</li>
+          <li>비대면 멘토링 · 2026.10.8.(목) · <a href="https://us06web.zoom.us/meetings/83301151732/invitations?signature=-SQXn6WcwEcNWqWZOLBLf6QKMF3PEVnrT8-IIscKMCc" target="_blank" rel="noopener">Zoom 참여</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>바로가기</h5>
+        <ul>
+          <li><a href="#about">추진 목적 및 방법</a></li>
+          <li><a href="#schedule">세부 추진 일정</a></li>
+          <li><a href="#teams">팀 구성 현황</a></li>
+          <li><a href="https://drive.google.com/drive/folders/1ovJz0AXVEjyX4ehlvdRbqwzVRHwg-xsn?usp=sharing" target="_blank" rel="noopener noreferrer">발표자료 드라이브 폴더</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">© 2026 관학회(진로동아리) 팝콘 · 진로발표행사 안내 페이지</div>
+  </div>
+</footer>
+
+<button class="top-btn" id="topBtn" aria-label="맨 위로">↑</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- 1. D-Day 카운트다운 ---------- */
+  var EVENT = new Date(2026, 9, 24, 15, 0, 0);          // 2026-10-24 15:00
+  var EVENT_END = new Date(2026, 9, 24, 18, 0, 0);      // 종료 추정 18:00
+  var elV = document.getElementById('cdValue');
+  var elL = document.getElementById('cdLabel');
+  var elN = document.getElementById('cdNote');
+
+  function startOfDay(d){ return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
+  function pad2(n){ return (n < 10 ? '0' : '') + n; }
+
+  function renderCountdown(){
+    var now = new Date();
+    var days = Math.round((startOfDay(EVENT) - startOfDay(now)) / 86400000);
+
+    if (now >= EVENT && now <= EVENT_END){
+      elL.textContent = '지금';
+      elV.textContent = '진행중';
+      elN.textContent = '팝콘 경연이 진행 중입니다 · 1층 신음악실';
+    } else if (now > EVENT_END){
+      elL.textContent = '행사';
+      elV.textContent = '행사 종료';
+      elN.textContent = '2026.10.24.(토) 팝콘 경연이 종료되었습니다. 수고하셨습니다!';
+    } else if (days === 0){
+      elL.textContent = '오늘';
+      elV.textContent = 'D-DAY';
+      var h = EVENT - now, hh = Math.floor(h/3600000), mm = Math.floor(h%3600000/60000), ss = Math.floor(h%60000/1000);
+      elN.textContent = '경연까지 ' + pad2(hh) + ':' + pad2(mm) + ':' + pad2(ss) + ' 남았습니다';
+    } else {
+      elL.textContent = '경연까지';
+      elV.textContent = 'D-' + (days < 10 ? '0' + days : days);
+      elN.textContent = '2026년 10월 24일 토요일 오후 3시 · 1층 신음악실';
+    }
+  }
+  renderCountdown();
+  setInterval(renderCountdown, 1000);
+
+  /* ---------- 2. 타임라인 상태(완료/오늘/임박/예정) ---------- */
+  (function(){
+    var today = startOfDay(new Date());
+    var items = document.querySelectorAll('#timeline .tl-item');
+    Array.prototype.forEach.call(items, function(it){
+      var p = it.getAttribute('data-date').split('-');
+      var d = new Date(+p[0], +p[1] - 1, +p[2]);
+      var diff = Math.round((d - today) / 86400000);
+      var badge = it.querySelector('.js-badge');
+      var cls, txt;
+      if (diff < 0){ cls = 'done';  txt = '완료'; it.classList.add('is-done'); }
+      else if (diff === 0){ cls = 'today'; txt = '오늘'; it.classList.add('is-today'); }
+      else if (diff <= 7){ cls = 'soon';  txt = 'D-' + (diff < 10 ? '0' + diff : diff) + ' 임박'; it.classList.add('is-soon'); }
+      else { cls = 'up'; txt = 'D-' + (diff < 10 ? '0' + diff : diff) + ' 예정'; }
+      badge.className = 'badge ' + cls + ' js-badge';
+      badge.textContent = txt;
+    });
+  })();
+
+  /* ---------- 3. 팀 카드 렌더링 ---------- */
+  var TEAMS = [
+    { no:1, leader:'김도율', clerk:'유민상', speaker:'김재영', ppt:'조연우',
+      topic:'', fields:['운동','교육','리더십','군사'], mentor:'O (팀장)' },
+    { no:2, leader:'송민준', clerk:'한지호', speaker:'강지후', ppt:'장준우',
+      topic:'AI가 이끄는 세무와 마케팅의 유기적 통합 경영', fields:['경영'], mentor:'O' },
+    { no:3, leader:'동혁', clerk:'김수호', speaker:'김수호', ppt:'손유민',
+      topic:'인플레이션', fields:['경영','수학교육'], mentor:'O' },
+    { no:4, leader:'김다운', clerk:'김다운', speaker:'강드림', ppt:'김다운',
+      topic:'', fields:['체육','철도'], mentor:'미정' },
+    { no:5, leader:'이태현', clerk:'차준영', speaker:'박현우', ppt:'전승혁',
+      topic:'청소년범죄기록 장기보존', fields:['법','행정','심리','경찰행정'], mentor:'O' },
+    { no:6, leader:'최주영', clerk:'이시언', speaker:'최주영', ppt:'이시언',
+      topic:'공군', fields:['군인(공군)','기계공학'], mentor:'미정' }
+  ];
+
+  function esc(s){
+    return String(s).replace(/[&<>"']/g, function(c){
+      return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];
+    });
+  }
+
+  var grid = document.getElementById('teamGrid');
+  var html = '';
+  var topicCount = 0, mentorCount = 0;
+
+  TEAMS.forEach(function(t){
+    var hasTopic = !!t.topic;
+    if (hasTopic) topicCount++;
+    var joined = t.mentor.indexOf('O') === 0;
+    if (joined) mentorCount++;
+
+    html += '' +
+    '<article class="team-card reveal">' +
+      '<div class="team-head">' +
+        '<span class="no"><em>' + t.no + '</em>' + t.no + '팀</span>' +
+        '<span class="mbadge' + (joined ? '' : ' no-m') + '">' +
+          (joined ? '✓ 멘토링 ' + esc(t.mentor) : '· 멘토링 ' + esc(t.mentor)) +
+        '</span>' +
+      '</div>' +
+      '<div class="team-body">' +
+        '<div class="topic">' +
+          '<div class="lb">발표 주제</div>' +
+          '<div class="tx' + (hasTopic ? '' : ' undecided') + '">' +
+            (hasTopic ? esc(t.topic) : '주제 미정') +
+          '</div>' +
+        '</div>' +
+        '<div class="roles">' +
+          '<div class="role"><b>팀장</b><span>' + esc(t.leader) + '</span></div>' +
+          '<div class="role"><b>서기</b><span>' + esc(t.clerk) + '</span></div>' +
+          '<div class="role"><b>발표</b><span>' + esc(t.speaker) + '</span></div>' +
+          '<div class="role"><b>PPT 제작</b><span>' + esc(t.ppt) + '</span></div>' +
+        '</div>' +
+        '<div>' +
+          '<div class="fields-lb">관심 분야</div>' +
+          '<div class="fields">' +
+            t.fields.map(function(f){ return '<span class="tag">#' + esc(f) + '</span>'; }).join('') +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+    '</article>';
+  });
+
+  grid.innerHTML = html;
+  document.getElementById('stTopic').textContent = topicCount;
+  document.getElementById('stMentor').textContent = mentorCount;
+
+  /* ---------- 4. 모바일 메뉴 ---------- */
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  Array.prototype.forEach.call(links.querySelectorAll('a'), function(a){
+    a.addEventListener('click', function(){
+      links.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    });
+  });
+
+  /* ---------- 5. 스크롤: 네비 active / 상단 버튼 / 그림자 ---------- */
+  var nav = document.getElementById('nav');
+  var topBtn = document.getElementById('topBtn');
+  var navAnchors = links.querySelectorAll('a');
+  var sections = [];
+  Array.prototype.forEach.call(navAnchors, function(a){
+    var s = document.querySelector(a.getAttribute('href'));
+    if (s) sections.push({ a:a, s:s });
+  });
+
+  function onScroll(){
+    var y = window.pageYOffset || document.documentElement.scrollTop;
+    nav.classList.toggle('scrolled', y > 10);
+    topBtn.classList.toggle('show', y > 420);
+
+    var cur = null;
+    sections.forEach(function(o){
+      if (o.s.offsetTop - 110 <= y) cur = o;
+    });
+    Array.prototype.forEach.call(navAnchors, function(a){ a.classList.remove('active'); });
+    if (cur) cur.a.classList.add('active');
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  topBtn.addEventListener('click', function(){
+    window.scrollTo({ top:0, behavior:'smooth' });
+  });
+
+  /* ---------- 6. 등장 애니메이션 ---------- */
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold:0.08, rootMargin:'0px 0px -40px 0px' });
+    Array.prototype.forEach.call(document.querySelectorAll('.reveal'), function(el){ io.observe(el); });
+  } else {
+    Array.prototype.forEach.call(document.querySelectorAll('.reveal'), function(el){ el.classList.add('in'); });
+  }
+
+  /* ---------- 7. 드라이브 iframe 로드 실패 대비 ---------- */
+  var frame = document.getElementById('driveFrame');
+  var fallback = document.getElementById('driveFallback');
+  var loaded = false;
+  frame.addEventListener('load', function(){ loaded = true; });
+  frame.addEventListener('error', function(){ fallback.classList.add('show'); });
+  setTimeout(function(){
+    if (!loaded) fallback.classList.add('show');
+  }, 6000);
+})();
+</script>
+</body>
+</html>
